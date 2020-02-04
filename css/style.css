@@ -1,0 +1,407 @@
+@charset "UTF-8";
+
+/*----------------------------------------------------
+default css ▼
+----------------------------------------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body { /* body default */
+  color: #3c3c3c;
+  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, sans-serif;
+  font-size: 1.6rem;
+  -moz-osx-font-smoothing: grayscale; /* フォントのアンチエイリアスの方式 */
+  -webkit-font-smoothing: antialiased; /* フォントのアンチエイリアスの方式 */
+  padding: 0;
+  line-height: 1.6;
+  margin: 0;
+}
+img { /* img default */
+	border: 0;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+nav,
+ul,
+ol {
+  list-style: none;
+}
+  /* Apply cursor pointer to button elements */
+button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"],
+  [role="button"] {
+    cursor: pointer;
+    color: inherit;
+}
+small {
+  font-size: 80%; /* Set font-size to 80% in `small` elements */
+}
+a { 
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  cursor: pointer;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+/* 見たくない人用に、すべてのアニメーションとトランジションを削除 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*----------------------------------------------------
+default css ▲
+----------------------------------------------------*/
+
+
+/*----------------------------------------------------
+header
+----------------------------------------------------*/
+header {
+  max-width: 100vw;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+header .inner {
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.header-logo {
+  letter-spacing: 2px;
+  font-size: 32px;
+  font-weight: bold;
+  align-items: center;
+  padding: 4px;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.header-list {
+  display: flex;
+  align-items: center;
+}
+
+.header-list li {
+  margin-right: 50px;
+  justify-content: flex-end;
+}
+
+.header-list li:last-child {
+  margin-right: 0;
+}
+
+.header-list li a {
+  font-weight: 600;
+}
+
+
+/*----------------------------------------------------
+main visual
+----------------------------------------------------*/
+#mv {
+  height: 700px;
+}
+.mainVisualText{
+  position: relative;
+  font-size: 3.2rem;
+  display: inline-flex;
+  top: 200px;
+  left: 100px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .6);
+  padding: 1rem;
+  margin-bottom: 50px;
+}
+
+.mainVisualText::before {
+  content: "";
+  background-color: #e7e7e7;
+  height: 900px;
+  width: 700px;
+  z-index: -2;
+  position: absolute;
+  top: -500px;
+  left: -300px;
+}
+
+.mainVisualText::after {
+  content: "";
+  display: inline-block;
+  background-image: url(../images/sean-pollock-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  display: flex;
+  position: absolute;
+  top: -200px;
+  width: 70vw;
+  height: 500px;
+  left: 150px;
+  z-index: -1;
+}
+
+
+/*----------------------------------------------------
+main
+----------------------------------------------------*/
+main {
+  min-height: 100vh;
+}
+.inner {
+  width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+
+/*----------------------------------------------------
+main content
+----------------------------------------------------*/
+.greeting {
+  margin-bottom: 8rem;
+}
+
+.greeting .inner {
+  display: flex;
+  justify-content: space-around;
+}
+
+.greeting figure {
+  width: 48%;
+  margin: 2rem;
+}
+
+.figureDescription {
+  width: 48%;
+}
+
+.greetingTitle {
+  text-align: center;
+  padding: 3.5rem 0;
+}
+
+.greetingText {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+
+.work {
+  padding-top: 3rem;
+  width: 100%;
+  position: relative;
+  margin-bottom: 8rem;
+}
+
+.workTitle::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  content: "";
+  height: 300px;
+  background: #e7e7e7;
+  position: absolute;
+  z-index: -1;
+}
+
+.work .inner {
+  width: 98vw;
+}
+
+.workTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.workCard {
+  display: flex;
+  justify-content: space-between;
+}
+
+.workCard li {
+  width: 400px;
+}
+
+.workCard li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.news {
+  margin-bottom: 8rem;
+}
+
+.news .inner {
+  width: 1200px;
+}
+
+.newsTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.newslist li {
+  padding: 1rem 0;
+  border-bottom: 1px dotted #dcdcdc;
+}
+
+.newslist time{
+  margin-right: 8rem;
+  font-size: 1.4rem;
+  color: #5c5c5c;
+}
+
+.newslist a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.recruit {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 12rem;
+}
+
+.recruit::after {
+  position: absolute;
+  content: "";
+  background: #e7e7e7;
+  top: 0;
+  right: 0;
+  width: 45vw;
+  height: 45vh;
+  z-index: -1;
+}
+
+.recruit .inner {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.recruitImg {
+  padding-top: 5rem;
+  position: relative;
+}
+
+.recruitImg img {
+  width: 84%;
+  height: 48vh;
+  object-fit: cover;
+}
+
+.recruitImg::after {
+  content: "";
+  background-color: rgba(0, 0, 0, .4);
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  width: 84%;
+  height: 48vh;
+}
+
+.recruitTitle {
+  position: absolute;
+  top: 70%;
+  left: 36%;
+  background-color: #e7e7e7;
+  padding: .8rem 5rem;
+  z-index: 2;
+}
+
+.recruitTitle:hover {
+  transition: .3s;
+  opacity: .6;
+}
+
+.recruitTitle a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/*----------------------------------------------------
+footer
+----------------------------------------------------*/
+.footer {
+  width: 100%;
+}
+
+.footer .inner {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 4rem;
+}
+
+.address p {
+  font-size: 1.4rem;
+}
+
+.footer-list {
+  display: flex;
+  align-items: center;
+}
+
+.footer-list li {
+  margin-right: 3rem;
+}
+
+.footer-list li:last-child {
+  margin-right: 0;
+}
+
+.footer-list li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.copy {
+  width: 100vw;
+  height: 12vh;
+  background-color: #e7e7e7;
+  text-align: center;
+}
+
+.copy small {
+  line-height: 11rem;  /* 1行テキストの縦方向中央にはline-height!!! */
+}
+
+
+/*----------------------------------------------------
+Media Queries
+----------------------------------------------------*/
+@media (max-width: 992px) {
+  .header-list li {
+    margin-right: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+}
